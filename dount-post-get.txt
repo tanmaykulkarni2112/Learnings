@@ -1,0 +1,63 @@
+Q. so the get is used when the server gets the data from the client and the post is used when the client wants to post something on the server
+----------------------------------------------------------------------
+Yes, that's correct! Let's summarize it to clarify:
+
+### GET Request
+
+- **Client Role**: The client (e.g., web browser, mobile app) initiates a GET request to the server.
+- **Server Role**: The server receives the GET request and responds with data requested by the client.
+- **Purpose**: Used when the client wants to retrieve data from the server.
+- **Example**: Loading a webpage, fetching images, or retrieving information from an API.
+
+### POST Request
+
+- **Client Role**: The client initiates a POST request to send data to the server.
+- **Server Role**: The server receives the POST request, processes the data sent by the client, and returns a response.
+- **Purpose**: Used when the client wants to send data to the server to create or update a resource.
+- **Example**: Submitting a form with user information, uploading files, or making changes to a database.
+
+### Comparison
+
+- **GET**: Retrieves data from the server based on a URL and parameters.
+- **POST**: Sends data to the server in the request body to create or update resources.
+
+### Usage
+
+- **GET** requests are typically used for fetching data from the server. They do not typically have a request body and are suitable for operations that do not change the server state.
+- **POST** requests are used when the client needs to send data to the server, often for creating or updating resources. They can contain a request body with data sent by the client.
+
+In an Express application (or any web application), `app.get` and `app.post` are used to define routes that handle these respective HTTP methods. The server listens for these requests, processes them accordingly, and sends back a response to the client.
+
+Q. so when i use postman i as client actually am hitting the server and wanting to share the data
+--------------------------------------------------------------------------------------------------------
+### Using Postman as a Client
+
+1. **Setting Up Postman**:
+   - Open Postman and enter the URL of the server endpoint you want to interact with, such as `http://localhost:3000/example`.
+
+2. **Choosing HTTP Method**:
+   - Select the HTTP method you want to use from the dropdown menu (e.g., GET, POST).
+
+3. **Sending Data**:
+   - For a POST request, you need to send data to the server. In Postman, you can add this data in the request body. You can choose the format (e.g., JSON, form-data) that matches what the server expects.
+
+4. **Receiving Responses**:
+   - After you send the request, Postman will show the response from the server. This could be a success message, error message, or any other data that the server sends back.
+
+### Summary
+
+- **POST Request**:
+  - **Client Action**: You, as the client, are sending data to the server.
+  - **Server Role**: The server receives this data, processes it (e.g., saves it to a database), and sends back a response.
+
+- **GET Request**:
+  - **Client Action**: You, as the client, are requesting data from the server.
+  - **Server Role**: The server retrieves the requested data and sends it back to you.
+
+### Key Points
+
+- **Postman** allows you to simulate different types of HTTP requests and see the server’s responses.
+- **POST Requests** in Postman involve sending data to the server for purposes like creating or updating resources.
+- **GET Requests** involve retrieving data from the server without altering its state.
+
+By using Postman, you can effectively test and debug your server endpoints by making requests that mimic real-world client interactions.
