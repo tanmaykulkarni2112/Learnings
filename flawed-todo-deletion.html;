@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="text" placeholder="task" id="name"><br><br>
+        <input type="text" placeholder="description" id="desc"><br><br>
+        <button id="button">ToDo</button>
+    </div>
+    <div id = "deletable">
+        <h2 id="nameprint"></h2>
+        <h2 id="descprint"></h2>
+    </div>
+    <script>
+        document.getElementById("button").onclick = function() {
+            const t = document.getElementById("name").value;
+            const d = document.getElementById("desc").value;
+            document.getElementById("nameprint").innerHTML = t;
+            document.getElementById("descprint").innerHTML = d;
+            const node = document.createElement("button");
+            node.id = "but1";
+            node.innerHTML = "Delete the task"
+            document.getElementById("descprint").appendChild(node);
+            node.onclick = function() {
+                const del = getElementById("deletable");
+                del.parentNode.removeChild(del);
+            };
+        }
+    </script>
+</body>
+</html>
+//------------------------------
+<!-- <html>
+    <script>
+        function addToDo(){
+            const title = document.getElementById("title").value;
+            const description = document.getElementById("description").value;
+            // document.getElementById("container").innerHTML += `<div> 
+            //     <div>${title}</div>
+            //     <div> ${description} </div>
+            //     <button>Task completed</button>     
+            // </div>
+            // `
+
+            //parent <- child <- grandchildren
+            const childDiv = document.createElement("div"); //creates a DOM element which is not present in the DOM then eventually put it in DOM
+            childDiv.innerHTML = title;
+            //append the div to dom
+            document.getElementById("container").appendChild(childDiv); //get(where).append(what)
+            
+        }
+    </script>
+    <div>
+        <input type = "text" placeholder = "task" id="title"><br><br>
+        <input type = "text" placeholder = "description" id="description"><br><br>
+        <button onclick="addToDo()">Add ToDo</button>
+        
+    <div id="container">
+
+    </div>
+</html> -->
