@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script>
+    let globalId = 1;
+
+    function markAsDone(todoId) {
+      const parent = document.getElementById(todoId);
+      parent.children[2].innerHTML = "Done!"
+    }
+
+    //function to create a child node containing grandchildren nodes
+    function createChild(title, description, id) {
+        
+        //creating the grandchildren nodes
+      const child = document.createElement("div");
+      const firstGrandParent = document.createElement("div");
+      firstGrandParent.innerHTML = title;
+      const secondGrandParent = document.createElement("div");
+      secondGrandParent.innerHTML = description;
+      const thirdGrandParent = document.createElement("button");
+      thirdGrandParent.innerHTML = "Mark as done";
+      thirdGrandParent.setAttribute("onclick", `markAsDone(${id})`);
+      
+      //appending the grandchildren to child node
+      child.appendChild(firstGrandParent);
+      child.appendChild(secondGrandParent);
+      child.appendChild(thirdGrandParent)
+      child.setAttribute("id", id);
+      return child;
+    }
+
+    //nonfunctional
+    function updateDomAccToState(state) {
+        const parent = doucment.getElementById("container");
+        parent.innerHTML = "";
+        for(let i = 0; i < state.length; i++) {
+            const child = createChild(state[i].title, state[i].desciption, state[i].id);
+            parent.appendChild(child);
+
+        }
+    }
+    
+    function addTodo() {
+      const title = document.getElementById("title").value;
+      const description = document.getElementById("description").value;
+      const parent = document.getElementById("todos");
+
+      //in parent node appending the child node which contains the grandchildren nodes
+      parent.appendChild(createChild(title, description, globalId++));
+    }
+    //updateDomAccToState();
+  </script>
+</head>
+
+<body>
+  <input type="text" id="title" placeholder="Todo title"></input> <br /><br />
+  <input type="text" id="description" placeholder="Todo description"></input> <br /><br />
+  <button onclick="addTodo()">Add todo</button>
+
+  <div id="todos">
+
+  </div>
+</body>
+
+</html>
