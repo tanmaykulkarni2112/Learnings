@@ -31,8 +31,8 @@
       return child;
     }
 
-    //nonfunctional
-    function updateDomAccToState(state) {
+    //nonfunctional 
+    function updateDomAccToState(state) { //the state will alway be a array [(title,description, id),()]
         const parent = doucment.getElementById("container");
         parent.innerHTML = "";
         for(let i = 0; i < state.length; i++) {
