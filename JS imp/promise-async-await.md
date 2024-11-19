@@ -101,4 +101,5 @@ getAPIData();  // Simulate fetching data from a valid URL
 ```
 
 Promise -> Allowance of using data
-async/ await functiom -> Fetching data allowed by Promise
+
+async/ await functiom -> Fetching data allowed by Promise in some variable
