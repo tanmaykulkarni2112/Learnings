@@ -45,7 +45,6 @@ FROM
     staging_table
 WHERE 
     EXTRACT(YEAR FROM datetime) >= 2017  -- From 2017 onwards
-    AND (
-        EXTRACT(YEAR FROM datetime) < 2019 
-        OR (EXTRACT(MINUTE FROM datetime) = 0 AND EXTRACT(SECOND FROM datetime) = 0)
-    );
+    AND EXTRACT(MINUTE FROM datetime) = 0  -- Exact hour mark
+    AND EXTRACT(SECOND FROM datetime) = 0;  -- Exact hour mark
+
