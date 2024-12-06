@@ -1,3 +1,6 @@
+## Installing the dependencies 
+
+pip install psycopg2 numpy
 pip install modal
 
 
